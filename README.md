@@ -1,6 +1,12 @@
 # journalAi-server
 
-Usefull Software for comunicating with an LLM, Either you need Terminal command-assistance or Wonder how Wood spawn from a seed trough water sun on soil
+Work with an LLM trough your terminal by writing "ai", 
+just like "cd" for navigating & "ls" for listing out files 
+on MacOS
+
+Either you need Terminal command-assistance
+or 
+Wonder how Wood is made from a seed trough water sun on soil
 
 
 
