@@ -210,3 +210,5 @@ $RECYCLE.BIN/
 
 ./.env.local
 ./logs
+
+./package-lock.json

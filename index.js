@@ -4,6 +4,8 @@ import PerplexityService from "./src/perplexity/PerplexityService.js";
 import 'dotenv/config';
 import {getUserInput} from "./src/util/inputHandler.js";
 import {printMessage} from "./src/util/print.js";
+import {checkApiKey, runSetup} from "./src/setup/setup.js";
+import {getApiKey} from "./database/apiKeys.js";
 
 const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY;
 
@@ -12,12 +14,13 @@ const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY;
 // console.log(`You entered: ${userInput}`);
 
 async function main() {
-    if (!PERPLEXITY_API_KEY) {
-        console.log("no api key")
-        //TODO: run setup process
-
+    await checkApiKey(); //TODO: make this return api key
+    const perplexityApiKey = await getApiKey('Perplexity');
+    if (!perplexityApiKey) {
+        console.log("API key still missing. Exiting.");
         process.exit(1);
     }
+
 
     const userInput = await getUserInput(process.argv.slice(2));
 
@@ -25,7 +28,6 @@ async function main() {
         console.log("No input provided. Exiting.");
         process.exit(0);
     }
-
 
     const service = new PerplexityService;
 

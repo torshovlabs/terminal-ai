@@ -1,5 +1,6 @@
 import PerplexityService from "./perplexity/PerplexityService.js";
 import {printMessage} from "./util/print.js";
+import {BROAD} from "./util/constants.js";
 
 /**
  * Handles broad queries when no specific command line arguments are provided
@@ -15,7 +16,7 @@ export async function handleBroadQuery(userInput) {
     const service = new PerplexityService();
 
     try {
-        const { assistantMessage, usage } = await service.queryPerplexity(userInput, "do analysis");
+        const { assistantMessage, usage } = await service.queryPerplexity(userInput, BROAD);
         printMessage(assistantMessage);
     } catch (error) {
         console.error("Error getting response from Perplexity:", error);

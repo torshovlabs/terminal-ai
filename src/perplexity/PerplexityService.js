@@ -1,16 +1,16 @@
 import 'dotenv/config';
 import {SYS_C37} from "../util/constants.js";
+import {getApiKey} from "../../database/apiKeys.js";
 
 const PERPLEXITY_API_KEY = process.env.PERPLEXITY_API_KEY;
 
 export default class PerplexityService {
 
 
-
     async queryPerplexity(userInput, sys) {
-
-        if (!PERPLEXITY_API_KEY) {
-            throw new Error('PERPLEXITY_API_KEY is not set in environment variables');
+        const apiKey = await getApiKey('Perplexity');
+        if (!apiKey) {
+            throw new Error("API key is missing from the database"); //TODO: run setup or a util file to debug or command
         }
 
         const systemContent = sys || SYS_C37;
@@ -19,7 +19,7 @@ export default class PerplexityService {
             const options = {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${PERPLEXITY_API_KEY}`,
+                    "Authorization": `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({

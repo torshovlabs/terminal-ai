@@ -33,3 +33,6 @@ export const SYS_O1 =
     "2. **Short & Direct** – Provide only the essential command. " +
     "3. **No Chit-Chat** – Skip all unnecessary words. " +
     "4. **Essential Commands Only** – Give just enough to complete the task. ";
+
+
+export const BROAD = `do analysis, this will be written out in a terminal so make it visible and visually pleasing to read`
