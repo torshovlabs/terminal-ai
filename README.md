@@ -42,4 +42,12 @@ where we have chosen to use the "lowdb"-dependency for Datastorage
 When writing "ai" followed up with a question, the terminal ai will act as a terminal assistant, helping you with commands related to work inside the Terminal itself And That Only.
 
 
-If Writing Only "ai", You will be prompted with a question, that when answered, Will behave as any regular LLM, searching trough the whole web, Able to create analyzes for you, as well as answer every quesiton you need answered From Your Finger Tips
+If Only "ai" is written, with no arguments, 
+You will be prompted with a question, that when answered, 
+Will behave as any regular LLM, searching trough the whole web, 
+Able to create analyzes for you, 
+as well as answer every quesiton you need answered 
+
+
+
+From Your Finger Tips
