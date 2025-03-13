@@ -1,4 +1,4 @@
-# journalAi-server
+# Terminal Ai Agent
 
 Work with an LLM trough your terminal by writing "ai", 
 just like "cd" for navigating & "ls" for listing out files 
@@ -12,17 +12,29 @@ Wonder how Wood is made from a seed trough water sun on soil
 
 # Setup
 
-When cloning the library, do first:
+After cloning the library, In your terminal, in the root of this directory, 
+do first:
+  - "npm i"
+    
+That was to install the dependencies,
+
+follow that up with:
   - "chmod +x index.js"
-In your terminal, in the root of this directory,
+    
 then follow up with the command
   - "npm link"
+
     
-Those two commands will make the keyword "ai" be accessable where ever you are inside the Terminal just like how "cd" and "ls" work
+These commands will make the keyword "ai" accessable
+Where ever you are inside the Terminal 
+Just like how "cd" and "ls" work.
 
 
-For now, you have to create a .env file for the apiKey, but we are working on making that insertable trough the terminal....next update then writing "ai" will take you trough a setup phase
+When you First write "ai" in terminal, you will be taken trough a onboarding session
+There you will declare your APIKEY, so have it at hand.
 
+The data will ofcourse(!) only be stored on your local machine,
+where we have chosen to use the "lowdb"-dependency for Datastorage
 
 
 # How to use?
